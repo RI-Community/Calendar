@@ -5,7 +5,7 @@
 </head>
 <body>
 	<div class="event" th:fragment="event">
-		<h2 th:text="${event.title}">Termineinladung</h2>
+		<a th:href="@{'/events/' + ${event.id}}"><h2 th:text="${event.title}">Termineinladung</h2></a>
 		<div class="info">
 			<div class="date">
 				<p class="info-date">
@@ -30,6 +30,7 @@
 					Link zum Veranstalter: <span><a th:text="${event.link}" th:href="${event.link}">Link</a></span>
 				</p>
 			</div>
+			<a sec:authorize="isAuthenticated()" th:href="@{'/admin/' + ${event.id}}">bearbeiten</a>
 		</div>
 	</div>
 </body>

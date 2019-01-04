@@ -21,8 +21,8 @@ body {
 	.header li {
 		float: left;
 	}
+	.header li.right{float:right;}
 }
-.header li.right{float:right;}
 .header li a {
 	display: block;
 	color: white;
@@ -39,7 +39,7 @@ body {
 	background-color: #4CAF50;
 }
 
-.header .warning {
+.warning {
 	color: white;
 	text-align: center;
 	padding: 14px 16px;
@@ -52,7 +52,9 @@ body {
 	margin: 5px 0px;
 	min-height: 100px;
 }
-
+.content form *{
+	margin: 5px;
+}
 @media screen and (min-width: 600px) {
 	.content {
 		margin: 15px;
@@ -71,6 +73,18 @@ body {
 	font-weight: italic;
 }
 
+.form-group label{
+    width:100px;
+    display:inline-block;
+}
+
+.form-group input, .form-group textarea{
+    width:400px;
+}
+
+.hide{
+	display:none;
+}
 .footer {
 	position: fixed;
 	left: 0;

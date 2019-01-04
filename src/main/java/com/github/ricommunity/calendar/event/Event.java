@@ -7,11 +7,13 @@ public class Event {
 	private String address;
 	private String information;
 	private String link;
+	private int id;
+	private static int nextId = 1;
 
 	public Event() {
-		this("Title","date","time","address","info","http://google.de");
+		this("Kein Termin gefunden","1.1.1970","01:30 Uhr","","","", nextId++);
 	}
-		public Event(String title, String date, String time, String address, String information, String link) {
+		public Event(String title, String date, String time, String address, String information, String link, int id) {
 		this.title = title;
 		this.date = date;
 		this.time = time;
@@ -66,6 +68,9 @@ public class Event {
 
 	public void setLink(String link) {
 		this.link = link;
+	}
+	public int getId() {
+		return id;
 	}
 	
 	
