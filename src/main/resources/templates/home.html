@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>RI-Community Calendar</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link th:href="@{/style.css}" rel="stylesheet">
+</head>
+<body>
+	<div th:replace="fragments/header :: header"></div>
+	<div class="content" id="info">
+		<h2>Hier entsteht ein Angebot zur Vernetzung und zum gemeinsamen Austausch.</h2>
+	</div>
+	<div class="content" id="termine">
+		<div th:replace="fragments/event :: event"></div>
+	</div>
+	<div class="content" id="contact">
+		<p>Contact</p>
+
+	</div>
+	<div class="content" id="about">
+		<p>About</p>
+
+	</div>
+
+	<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

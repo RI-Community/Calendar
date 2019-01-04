@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title th:text="${error_title}">Error</title>
+<style>
+body{
+	/*background-color: #e54c3c;*/
+	background-color: #111;
+	animation: 2s ease-out 0s 1 turnDark;
+}
+.all{
+	color: #eee;
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+	margin-top: 20%;
+	animation: 1s ease-out 0s 1 slideIn;
+}
+h3{font-size:35px;}
+.all h1{
+	font-size:64px;
+	opacity: 0.7;
+}
+.bottom{
+	border-top: 3px solid #eee;
+	font-size:20px;
+	padding-top: 30px;
+	padding-bottom: 20px;
+	opacity: 0.7;
+	width: 40%;
+	margin-top: 50px;
+}
+.btn{
+	border: 2px solid #eee;
+	color: #eee;
+	border-radius: 20px;
+	padding: 5px 10px;
+	text-decoration: none;
+    transition-duration: 0.5s;
+}
+.btn:hover, .btn:active{
+	background-color: #eee;
+	color: #000;
+}
+@media only screen and (max-width: 500px) {
+	.all h1{font-size:30px;}
+	h3{font-size:15px;}
+	.all{margin-top: 50px;}
+	.bottom{
+		border-top: 1px solid #eee;
+		width: 100%;
+		margin-top: 20px;
+		padding-top: 20px;
+	}
+}
+@keyframes slideIn{
+  0% {
+    transform: translateY(100px);
+	opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes turnDark{
+  0% {
+	background-color: #e54c3c;
+  }
+  100% {
+	background-color: #111;
+  }
+}
+</style>
+</head>
+<body>
+	<div class="all">
+		<h1 th:text="${error_title}">Error</h1>
+		<h3 th:text="${error_subtitle}">The Computer said 'No'</h3>
+		<div class="bottom">
+		<p th:text="${error_reason}">Unfortunately, the Computer is not in the right mood. You can try it later again.</p>
+		</div>
+		<a class="btn" href="#" th:href="${error_backlink}">Go Home</a>
+	</div>
+</body>
+</html>
