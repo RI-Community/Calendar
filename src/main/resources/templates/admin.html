@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Hello Spring Security</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link th:href="@{/style.css}" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div th:replace="fragments/header :: navigation"></div>
+	<h1>This is a secured page!</h1>
+	<p>
+		<a href="#" th:href="@{/}">Back to home page</a>
+		<a href="#" th:href="@{/logout}">Logout</a>
+	</p>
+	<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>
+

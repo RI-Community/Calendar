@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <title>RI-Community Calendar</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<div th:replace="fragments/header :: header"></div>
+	<div th:replace="fragments/header :: navigation"></div>
 	<div class="content" id="info">
 		<h2>Hier entsteht ein Angebot zur Vernetzung und zum gemeinsamen Austausch.</h2>
 	</div>

@@ -1,4 +1,4 @@
-package com.github.ricommunity.calendar;
+package com.github.ricommunity.calendar.event;
 
 public class Event {
 	private String title;
@@ -9,7 +9,7 @@ public class Event {
 	private String link;
 
 	public Event() {
-		this("Title","date","time",System.getenv("key"),"info","http://google.de");
+		this("Title","date","time","address","info","http://google.de");
 	}
 		public Event(String title, String date, String time, String address, String information, String link) {
 		this.title = title;

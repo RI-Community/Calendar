@@ -22,7 +22,7 @@ body {
 		float: left;
 	}
 }
-
+.header li.right{float:right;}
 .header li a {
 	display: block;
 	color: white;
