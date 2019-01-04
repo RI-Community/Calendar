@@ -20,7 +20,7 @@ body {
 	position: sticky;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
 	.header li {
 		float: left;
 	}
