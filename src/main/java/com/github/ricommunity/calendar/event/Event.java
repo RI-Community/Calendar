@@ -1,6 +1,15 @@
 package com.github.ricommunity.calendar.event;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Event {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
 	private String title;
 	private String date;
 	private String time;
@@ -9,15 +18,16 @@ public class Event {
 	private String link;
 
 	public Event() {
-		this("Title","date","time","address","info","http://google.de");
+		this("Kein Termin gefunden","1.1.1970","01:30 Uhr","","","", 0L);
 	}
-		public Event(String title, String date, String time, String address, String information, String link) {
+		public Event(String title, String date, String time, String address, String information, String link, Long id) {
 		this.title = title;
 		this.date = date;
 		this.time = time;
 		this.address = address;
 		this.information = information;
 		this.link = link;
+		this.id = id;
 	}
 
 	public String getTitle() {
@@ -66,6 +76,9 @@ public class Event {
 
 	public void setLink(String link) {
 		this.link = link;
+	}
+	public long getId() {
+		return id;
 	}
 	
 	

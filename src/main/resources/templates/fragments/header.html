@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head th:fragment="header">
+<title th:text="${title}?${title}">RI-Community Calendar</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link th:href="@{/style.css}" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 	<div class="header" th:fragment="navigation">
 	<div class="warning">this Webapp is not ready for Production, use only for Testing!</div>
 		<ul>
-			<li><a class="active" href="/#info">Info</a></li>
-			<li><a href="/#termine">Termine</a></li>
-			<li><a href="/#contact">Contact</a></li>
-			<li><a href="/#about">About</a></li>
+			<li><a th:classappend="${id}=='info' ? active" href="/#info">Info</a></li>
+			<li><a th:classappend="${id}=='events' ? active" href="/events">Termine</a></li>
+			<li sec:authorize="hasRole('ROLE_ADMIN')"><a th:classappend="${id}=='admin' ? active" href="/admin">Admin</a></li>
+			<li class="right" sec:authorize="!isAuthenticated()"><a th:classappend="${id}=='login' ? active" href="/admin">login</a></li>
+			<li class="right" sec:authorize="isAuthenticated()"><a href="/logout">logout</a></li>
 		</ul>
 	</div>
 </body>

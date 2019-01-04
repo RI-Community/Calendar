@@ -4,16 +4,8 @@
 </head>
 <body>
 	<div th:replace="fragments/header :: navigation"></div>
-	<div class="content" id="info">
-		<h2>Hier entsteht ein Angebot zur Vernetzung und zum gemeinsamen Austausch.</h2>
-	</div>
-	<div class="content" id="contact">
-		<p>Contact</p>
-
-	</div>
-	<div class="content" id="about">
-		<p>About</p>
-
+	<div class="content" id="termine" th:each="event : ${events}">
+		<div th:replace="fragments/event :: event"></div>
 	</div>
 
 	<div th:replace="fragments/footer :: footer"></div>
